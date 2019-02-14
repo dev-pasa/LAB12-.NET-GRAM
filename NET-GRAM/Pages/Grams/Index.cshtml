@@ -1,0 +1,20 @@
+﻿@page "{id}"
+@model NET_GRAM.Pages.Grams.IndexModel
+
+@{
+}
+
+<div>
+    <label asp-for="Post.Author"></label>
+    <label asp-for="Post.Author">@Model.Post.Author</label>
+</div>
+
+<div>
+    <label asp-for="Post.Capture"></label>
+    <label asp-for="Post.Capture">@Model.Post.Capture</label>
+</div>
+<div>
+    <label asp-for="Post.Title"></label>
+    <label asp-for="Post.Title">@Model.Post.Title</label>
+</div>
+<a asp-page="/Grams/Manage" asp-route-id="@Model.Post.ID">EDIT</a>

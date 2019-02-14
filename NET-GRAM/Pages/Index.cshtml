@@ -1,0 +1,17 @@
+﻿@page
+
+@using NET_GRAM.Models.Interfaces;
+
+@inject IGram PostService
+
+@{
+    var post = await PostService.GetPosts();
+}
+
+@foreach (var item in post)
+{
+    <h3>@item.Author</h3>
+    <p>@item.Capture</p>
+
+    <a asp-page="/Grams/Index" asp-route-id="@item.ID">@item.Title</a>
+}
