@@ -24,17 +24,40 @@ namespace NET_GRAM.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Author");
-
-                    b.Property<string>("Content");
-
                     b.Property<int>("PostID");
+
+                    b.Property<string>("User");
+
+                    b.Property<string>("UserComment");
 
                     b.HasKey("ID");
 
                     b.HasIndex("PostID");
 
                     b.ToTable("Comments");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            PostID = 1,
+                            User = "Jimmy",
+                            UserComment = "Beautiul Seattle"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            PostID = 2,
+                            User = "Bob",
+                            UserComment = "Beautiul Seattle"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            PostID = 3,
+                            User = "Peter",
+                            UserComment = "The View is Amazon Amazing!"
+                        });
                 });
 
             modelBuilder.Entity("NET_GRAM.Models.Posts", b =>
@@ -62,15 +85,23 @@ namespace NET_GRAM.Migrations
                             Author = "Jimmy",
                             Capture = "Snow day",
                             ImageURL = "https://images.pexels.com/photos/688660/pexels-photo-688660.jpeg",
-                            Title = "Chace's Pancake Coral"
+                            Title = "Street Coral View"
                         },
                         new
                         {
                             ID = 2,
                             Author = "Bob",
                             Capture = "Snow",
+                            ImageURL = "https://www.andersonsobelcosmetic.com/wp-content/uploads/2016/12/what-to-do-in-Seattle-for-the-holidays-family-activities-1024x684.jpg",
+                            Title = "Snow on Top"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Author = "Peter",
+                            Capture = "Sun Set",
                             ImageURL = "https://images.pexels.com/photos/688660/pexels-photo-688660.jpeg",
-                            Title = "Chace's Pancake Coral"
+                            Title = "View Needle"
                         });
                 });
 

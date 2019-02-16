@@ -9,9 +9,9 @@ namespace NET_GRAM.Models
     {
         public int ID { get; set; }
 
-        public string Content { get; set; }
+        public string UserComment { get; set; }
 
-        public string Author { get; set; }
+        public string User { get; set; }
 
         public int PostID { get; set; }
 

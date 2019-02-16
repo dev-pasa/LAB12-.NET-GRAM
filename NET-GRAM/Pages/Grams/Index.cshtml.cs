@@ -29,7 +29,7 @@ namespace NET_GRAM.Pages.Grams
             // set all the data for my .cshtml page.
 
             // Get the specific Restaurant data for the id that was sent. 
-            Post = await _post.FindPost(ID);
+            Post = await _post.GetSinglePost(ID);
         }
     }
 } 
