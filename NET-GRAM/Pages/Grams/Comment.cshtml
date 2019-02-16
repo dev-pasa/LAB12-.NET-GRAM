@@ -1,0 +1,21 @@
+﻿@page "{id}"
+@model NET_GRAM.Pages.Grams.CommentModel
+@{
+    ViewData["Title"] = "Add Comment";
+}
+
+<div>
+
+    <form method="post">
+
+        <label asp-for="Comment.User"></label>
+        <input asp-for="Comment.User" />
+
+        <label asp-for="Comment.UserComment">Comment</label>
+        <textarea rows="5" asp-for="Comment.UserComment"></textarea>
+
+        <button class="submitter" type="submit">POST COMMENT</button>
+
+    </form>
+
+</div>

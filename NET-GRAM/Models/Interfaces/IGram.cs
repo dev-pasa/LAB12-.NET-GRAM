@@ -8,10 +8,10 @@ namespace NET_GRAM.Models.Interfaces
     public interface IGram
     {
         //Delete
-        Task DeleteAsync(int id);
+        Task Delete(int id);
 
         //Find
-        Task<Posts> FindPost(int id);
+        Task<Posts> GetSinglePost(int id);
 
         //GetAll
         Task<List<Posts>> GetPosts();

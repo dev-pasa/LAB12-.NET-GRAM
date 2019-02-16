@@ -17,6 +17,6 @@ namespace NET_GRAM.Models
 
         public string ImageURL { get; set; }
 
-        public List<Comment> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }

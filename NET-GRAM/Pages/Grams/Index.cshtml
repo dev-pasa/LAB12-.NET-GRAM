@@ -2,19 +2,37 @@
 @model NET_GRAM.Pages.Grams.IndexModel
 
 @{
+    ViewData["Title"] = "Details";
 }
 
-<div>
-    <label asp-for="Post.Author"></label>
-    <label asp-for="Post.Author">@Model.Post.Author</label>
+@{ 
+    var comments = Model.Post.Comments.ToList();
+}
+
+<head>
+    <title>Details</title>
+  
+</head>
+
+
+<div >
+    <h2 >@Model.Post.Author</h2>
+    <h2 >@Model.Post.Capture</h2>
+    <img  src="@Model.Post.ImageURL" alt="image" height="155" width="155/>
+    <div >
+        <p id="caption">@Model.Post.Title</p>
+        <hr />
+        @foreach (var comment in comments)
+        {
+            <p class="comment"><span class="commentAuthor">@comment.User</span>: @comment.UserComment</p>
+        }
+    </div>
 </div>
 
-<div>
-    <label asp-for="Post.Capture"></label>
-    <label asp-for="Post.Capture">@Model.Post.Capture</label>
-</div>
-<div>
-    <label asp-for="Post.Title"></label>
-    <label asp-for="Post.Title">@Model.Post.Title</label>
-</div>
 <a asp-page="/Grams/Manage" asp-route-id="@Model.Post.ID">EDIT</a>
+<a asp-page="/Grams/Comment" asp-route-id="@Model.Post.ID">ADD COMMENT</a>
+<a  asp-page="/Index">HOME</a>
+
+
+
+

@@ -11,7 +11,11 @@
 @foreach (var item in post)
 {
     <h3>@item.Author</h3>
-    <p>@item.Capture</p>
+    @*<p>@item.Title</p>
+        <p>@item.Capture</p>*@
+    <img src=@item.ImageURL height="155" width="155">
 
-    <a asp-page="/Grams/Index" asp-route-id="@item.ID">@item.Title</a>
+    <a asp-page="/Grams/Index" asp-route-id="@item.ID"> See Details</a>
 }
+
+<h3><a asp-page="/Posts/Manage">Add New Post</a></h3>
