@@ -50,14 +50,14 @@ namespace NET_GRAM.Data
                      ID = 1,
                      PostID = 1,
                      User = "Jimmy",
-                     UserComment = "Beautiul Seattle"
+                     UserComment = "Beautiful Seattle"
                  },
                 new Comment
                 {
                     ID = 2,
                     PostID = 2,
                     User = "Bob",
-                    UserComment = "Beautiul Seattle"
+                    UserComment = "Beautiful Seattle"
 
                 },
                 new Comment

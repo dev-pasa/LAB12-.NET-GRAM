@@ -14,8 +14,4 @@
     <PackageReference Include="windowsazure.storage" Version="9.3.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
 </Project>

@@ -20,6 +20,9 @@ namespace NET_GRAM
 
         public Startup(IConfiguration configuration)
         {
+            //var builder = new ConfigurationBuilder().AddEnvironmentVariables();
+            //builder.AddUserSecrets<Startup>();
+            //Configuration = builder.Build();
             Configuration = configuration;
         }
 
@@ -29,9 +32,11 @@ namespace NET_GRAM
         {
             services.AddMvc();
 
-            services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            //services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"]));
+            //services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BlobConnectionString")));
             services.AddScoped<IGram, PostsManager>();
+            //services.AddScoped<IComment, CommentManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NET_GRAM.Migrations
 {
-    public partial class initial : Migration
+    public partial class _23 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,12 +62,12 @@ namespace NET_GRAM.Migrations
             migrationBuilder.InsertData(
                 table: "Comments",
                 columns: new[] { "ID", "PostID", "User", "UserComment" },
-                values: new object[] { 1, 1, "Jimmy", "Beautiul Seattle" });
+                values: new object[] { 1, 1, "Jimmy", "Beautiful Seattle" });
 
             migrationBuilder.InsertData(
                 table: "Comments",
                 columns: new[] { "ID", "PostID", "User", "UserComment" },
-                values: new object[] { 2, 2, "Bob", "Beautiul Seattle" });
+                values: new object[] { 2, 2, "Bob", "Beautiful Seattle" });
 
             migrationBuilder.InsertData(
                 table: "Comments",
