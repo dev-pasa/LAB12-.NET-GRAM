@@ -1,0 +1,90 @@
+﻿
+
+body {
+    background-color: coral;
+    background-size: cover;
+    text-align: -webkit-center;
+}
+
+.header {
+    padding: 0.5vw;
+    text-align: center;
+    background: #c5b5b5;
+    color: black;
+    font-size: 30px;
+}
+
+.main-image-post {
+    background-color: antiquewhite;
+    padding-top: 3vh;
+    padding-bottom: 4vh;
+    width: 35vw;
+    border-radius: 10px;
+    margin: 3vh;
+    
+}
+
+.header1 {
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.7)),url(header1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 10vh;
+    font-size: 5vw;
+    color: darkkhaki;
+}
+
+.postImage {
+    width: 25vw;
+    height: 20vw;
+    transition: linear 0.15s;
+}
+
+.button {
+    padding: 0.5vw 0.5vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #1a0606;
+    background-color: #89bfd4;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    justify-content: center;
+    display: flex;
+}
+
+.button:hover {
+    background-color: #c5b5b5
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.paragraph {
+    padding: 0.5vw;
+    text-align: center;
+    background: #c5b5b5;
+    color: black;
+    font-size: 2vw;
+    display: flex;
+}
+
+.button2 {
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #f44336;
+}

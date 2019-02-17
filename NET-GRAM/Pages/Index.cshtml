@@ -4,18 +4,27 @@
 
 @inject IGram PostService
 
+@{ 
+    Layout = "_Layout";
+}
+
 @{
     var post = await PostService.GetPosts();
 }
 
 @foreach (var item in post)
 {
-    <h3>@item.Author</h3>
+<div class="main-image-post">
+    <h3 class="header">@item.Author</h3>
     @*<p>@item.Title</p>
         <p>@item.Capture</p>*@
-    <img src=@item.ImageURL height="155" width="155">
-
-    <a asp-page="/Grams/Index" asp-route-id="@item.ID"> See Details</a>
+    <img   class="postImage"  src=@item.ImageURL>
+    <div class="button">
+        <a asp-page="/Grams/Index" asp-route-id="@item.ID"> If you want more info: Click Me!</a>
+    </div>
+    
+</div>
+    
 }
 
-<h3><a asp-page="/Posts/Manage">Add New Post</a></h3>
+<h3><a  asp-page="/Grams/Manage">NEW POST</a></h3>

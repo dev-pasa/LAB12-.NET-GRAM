@@ -9,8 +9,8 @@ using NET_GRAM.Data;
 namespace NET_GRAM.Migrations
 {
     [DbContext(typeof(PostsDbContext))]
-    [Migration("20190216174950_initial")]
-    partial class initial
+    [Migration("20190217042702_23")]
+    partial class _23
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,14 +44,14 @@ namespace NET_GRAM.Migrations
                             ID = 1,
                             PostID = 1,
                             User = "Jimmy",
-                            UserComment = "Beautiul Seattle"
+                            UserComment = "Beautiful Seattle"
                         },
                         new
                         {
                             ID = 2,
                             PostID = 2,
                             User = "Bob",
-                            UserComment = "Beautiul Seattle"
+                            UserComment = "Beautiful Seattle"
                         },
                         new
                         {

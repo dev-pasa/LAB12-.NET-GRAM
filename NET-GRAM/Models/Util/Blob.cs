@@ -20,10 +20,15 @@ namespace NET_GRAM.Models.Util
         }
 
         //Get Container
+        /// <summary>
+        /// Create connection to blob storage container in Azure Blob 
+        /// </summary>
+        /// <param name="containerName"></param>
+        /// <returns></returns>
         public async Task<CloudBlobContainer> GetContainer(string containerName)
         {
             CloudBlobContainer cbc = CloudBlobClient.GetContainerReference(containerName);
-           await cbc.CreateIfNotExistsAsync();
+            await cbc.CreateIfNotExistsAsync();
             await cbc.SetPermissionsAsync(new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob });
 
             return cbc;
@@ -33,7 +38,8 @@ namespace NET_GRAM.Models.Util
         public async Task<CloudBlob> GetBlob(string imageName, string containerName)
         {
             //var container = CloudBlobClient.GetContainerReference(containerName);
-            CloudBlobContainer container = await GetContainer(containerName);
+            //CloudBlobContainer container = await GetContainer(containerName);
+            var container = await GetContainer(containerName);
             CloudBlob blob = container.GetBlobReference(imageName);
             return blob;
         }

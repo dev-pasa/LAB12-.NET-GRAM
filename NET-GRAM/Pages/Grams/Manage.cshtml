@@ -1,7 +1,9 @@
-﻿@page
+﻿@page "{id?}"
 @model NET_GRAM.Pages.Grams.ManageModel
 @{
     ViewData["Title"] = "Manage";
+
+    Layout = "_Layout";
 }
 
 <h1>Manage</h1>
@@ -9,15 +11,15 @@
 <form method="post" enctype="multipart/form-data">
 
 
-    <label asp-for="Post.Title"></label>
-    <textarea rows="5" asp-for="Post.Title"></textarea>
-
     <label asp-for="Post.Author"></label>
     <input asp-for="Post.Author" />
 
-    <label asp-for="Post.Capture"></label>
-    <input asp-for="Post.Capture" />
+    <label asp-for="Post.ImageURL"></label>
+    <input asp-for="Post.ImageURL" />
 
-     <button type="submit">SAVE</button>
+    <label asp-for="Post.Capture"></label>
+    <textarea rows="5" input asp-for="Post.Capture"></textarea>
+
+    <button type="submit">SAVE</button>
     <button type="submit" asp-page-handler="Delete">DELETE</button>
 </form>
