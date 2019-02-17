@@ -13,9 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="NET-GRAM">
-      <HintPath>..\NET-GRAM\bin\Release\netcoreapp2.2\NET-GRAM.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\NET-GRAM\NET-GRAM.csproj" />
   </ItemGroup>
 
 </Project>
