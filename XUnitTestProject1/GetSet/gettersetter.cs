@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using NET_GRAM.Models;
+using NET_GRAM.Migrations;
+using NET_GRAM.Pages;
+using NET_GRAM.Data;
+using Microsoft.EntityFrameworkCore;
+using NET_GRAM.Models.Services;
+using Microsoft.EntityFrameworkCore.InMemory;
 
 namespace XUnitTestProject1.GetSet
 {
     public class gettersetter
     {
+        /// <summary>
+        /// Set the Author property for Posts
+        /// </summary>
         [Fact]
         public void GetAuthor()
         {
@@ -18,7 +27,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("First", post.Author);
         }
 
-
+        /// <summary>
+        /// reSet the Author property for Posts
+        /// </summary>
         [Fact]
         public void SetAuthor()
         {
@@ -30,6 +41,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("Second", post.Author);
         }
 
+        /// <summary>
+        /// Set the Image property for Posts
+        /// </summary>
         [Fact]
         public void CanGetImageURL()
         {
@@ -40,6 +54,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("test.img", post.ImageURL);
         }
 
+        /// <summary>
+        /// ReSet the Author property for Posts
+        /// </summary>
         [Fact]
         public void SetImageURL()
         {
@@ -51,7 +68,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("test2.img", post.ImageURL);
         }
 
-
+        /// <summary>
+        /// Set the Capture property for Posts
+        /// </summary>
         [Fact]
         public void GetCapture()
         {
@@ -60,6 +79,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("test1", post.Capture);
         }
 
+        /// <summary>
+        /// ReSet the Author property for Posts
+        /// </summary>
         [Fact]
         public void SetCapture()
         {
@@ -69,7 +91,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("test12", post.Capture);
         }
 
-
+        /// <summary>
+        /// Set the Title property for Posts
+        /// </summary>
         [Fact]
         public void GetTitle()
         {
@@ -78,6 +102,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("test1", post.Title);
         }
 
+        /// <summary>
+        /// ReSet the Author property for Posts
+        /// </summary>
         [Fact]
         public void SetTitle()
         {
@@ -87,8 +114,11 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("test12", post.Title);
         }
 
+        /// <summary>
+        /// Set the URL property for Posts
+        /// </summary>
         [Fact]
-        public void CanGetUserID()
+        public void GetUserID()
         {
             Posts post = new Posts();
 
@@ -97,6 +127,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal(1, post.ID);
         }
 
+        /// <summary>
+        /// Set the ID property for Posts
+        /// </summary>
         [Fact]
         public void SetUserID()
         {
@@ -108,8 +141,11 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal(2, post.ID);
         }
 
+        /// <summary>
+        /// Set the PostID property for Posts
+        /// </summary>
         [Fact]
-        public void CanGetPostID()
+        public void GetPostID()
         {
             Comment comment = new Comment();
 
@@ -118,8 +154,11 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal(1, comment.PostID);
         }
 
+        /// <summary>
+        /// Update Post ID
+        /// </summary>
         [Fact]
-        public void CanSetPostID()
+        public void CanPostID()
         {
             Comment comment = new Comment();
             comment.PostID = 1;
@@ -129,6 +168,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal(2, comment.PostID);
         }
 
+        /// <summary>
+        /// Test user property
+        /// </summary>
         [Fact]
         public void GetUser()
         {
@@ -139,6 +181,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("Test", comment.User);
         }
 
+        /// <summary>
+        /// Update USer
+        /// </summary>
         [Fact]
         public void SetUser()
         {
@@ -150,6 +195,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("Test2", comment.User);
         }
 
+        /// <summary>
+        /// Get User comment
+        /// </summary>
         [Fact]
         public void GetUserComment()
         {
@@ -160,6 +208,9 @@ namespace XUnitTestProject1.GetSet
             Assert.Equal("Test", comment.UserComment);
         }
 
+        /// <summary>
+        /// Update user comment
+        /// </summary>
         [Fact]
         public void SetUserComment()
         {
@@ -170,5 +221,7 @@ namespace XUnitTestProject1.GetSet
 
             Assert.Equal("Test2", comment.UserComment);
         }
+
+       
     }
 }
