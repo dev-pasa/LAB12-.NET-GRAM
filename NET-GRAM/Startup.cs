@@ -32,8 +32,8 @@ namespace NET_GRAM
         {
             services.AddMvc();
 
-            //services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"]));
+            services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"]));
             //services.AddDbContext<PostsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BlobConnectionString")));
             services.AddScoped<IGram, PostsManager>();
             //services.AddScoped<IComment, CommentManager>();

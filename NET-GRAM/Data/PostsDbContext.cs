@@ -14,7 +14,7 @@ namespace NET_GRAM.Data
         {
 
         }
-
+        //inject data in the database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Posts>().HasData(
@@ -43,7 +43,7 @@ namespace NET_GRAM.Data
                     ImageURL = "https://images.pexels.com/photos/688660/pexels-photo-688660.jpeg"
                 });
 
-
+            //Inject data in the database
             modelBuilder.Entity<Comment>().HasData(
                  new Comment
                  {

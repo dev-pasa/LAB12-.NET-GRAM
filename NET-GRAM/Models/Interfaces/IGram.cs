@@ -7,16 +7,31 @@ namespace NET_GRAM.Models.Interfaces
 {
     public interface IGram
     {
-        //Delete
+        /// <summary>
+        /// Delete a post in the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task Delete(int id);
 
-        //Find
+        /// <summary>
+        /// Get Single post
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task<Posts> GetSinglePost(int id);
 
-        //GetAll
+        /// <summary>
+        /// Get a post in the database
+        /// </summary>
+        /// <returns></returns>
         Task<List<Posts>> GetPosts();
 
-        //Save
+        /// <summary>
+        /// Save a post in the database
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         Task SaveAsync(Posts post);
     }
 }

@@ -17,12 +17,20 @@ namespace NET_GRAM.Models.Services
             _context = context;
         }
 
-
+        /// <summary>
+        /// Get a list of Comment in the database
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Comment>> GetComments()
         {
             return await _context.Comments.ToListAsync();
         }
 
+        /// <summary>
+        /// Save the changes
+        /// </summary>
+        /// <param name="comment"></param>
+        /// <returns></returns>
         public async Task SaveAsync(Comment comment)
         {
             await _context.Comments.AddAsync(comment);

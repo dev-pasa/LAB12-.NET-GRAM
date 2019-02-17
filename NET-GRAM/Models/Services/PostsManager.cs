@@ -17,7 +17,11 @@ namespace NET_GRAM.Models.Services
             _context = context;
         }
 
-
+        /// <summary>
+        /// Get single post
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<Posts> GetSinglePost(int id)
         {
             Posts post = await _context.Post.FirstOrDefaultAsync(pos => pos.ID == id);
@@ -29,13 +33,20 @@ namespace NET_GRAM.Models.Services
             return post;
         }
 
-
+        /// <summary>
+        /// Get a list of posts
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Posts>> GetPosts()
         {
             return await _context.Post.ToListAsync();
         }
 
-
+        /// <summary>
+        /// Save the posts
+        /// </summary>
+        /// <param name="Post"></param>
+        /// <returns></returns>
         public async Task SaveAsync(Posts Post)
         {
             if (await _context.Post.FirstOrDefaultAsync(n => n.ID == Post.ID) == null)
@@ -51,6 +62,11 @@ namespace NET_GRAM.Models.Services
 
         }
 
+        /// <summary>
+        /// delete a post
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task Delete(int id)
         {
             //check to see if it exists
