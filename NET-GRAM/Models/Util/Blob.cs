@@ -10,12 +10,14 @@ namespace NET_GRAM.Models.Util
 {
     public class Blob
     {
+        public IConfiguration Configuration { get; }
         public CloudStorageAccount CloudStorageAccount { get; set; }
         public CloudBlobClient CloudBlobClient { get; set; }
 
         public Blob(IConfiguration configuration)
         {
-            CloudStorageAccount = CloudStorageAccount.Parse(configuration["BlobConnectionString"]);
+            Configuration = configuration;
+            CloudStorageAccount = CloudStorageAccount.Parse(Configuration["ConnectionStrings:BlobConnectionString"]);
             CloudBlobClient = CloudStorageAccount.CreateCloudBlobClient();
         }
 
